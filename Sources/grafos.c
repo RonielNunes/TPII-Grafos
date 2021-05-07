@@ -162,7 +162,51 @@ int escolhaAleatoria(TipoApontador *apGrafo, int *visitados)
 }
 
 /* -- IMPLEMENTÇÃO DA HEURÍSTICA DE MELHORIA --*/
-void algoritmo2opt(TipoApontador *apGrafo, int *caminho){
+void algoritmo2opt(TipoApontador *apGrafo, int *caminho, int * melhorCaminho){
+    int caminhoAux[(*apGrafo)->numeroVertices + 1];
+    int custoInicial = calculaCustoCaminho((apGrafo),caminho);
+    int custoAux;
+    int vertice;
+
+    copiarCaminho(&(*apGrafo),caminho,melhorCaminho);
+
+    for (int i = 0; i < (*apGrafo)->numeroVertices; i++)
+    {
+        copiarCaminho(&(*apGrafo),caminho,caminhoAux);
+
+        for (int j = i + 1; j < (*apGrafo)->numeroVertices; j++)
+        {
+            vertice = caminhoAux[i];
+            caminhoAux[i] = caminhoAux[j];
+            caminhoAux[j] = vertice;
+
+            custoAux = calculaCustoCaminho(&(*apGrafo),caminhoAux);
+
+            if(custoAux < custoInicial){
+                custoInicial = custoAux;
+                copiarCaminho(&(*apGrafo),caminhoAux,melhorCaminho);
+            }
+        }
+        
+    }
     
+
 }
 
+int calculaCustoCaminho(TipoApontador *apGrafo, int *caminho)
+{
+    int custoTotal = 0;
+
+    for (int i = 0; i < (*apGrafo)->numeroVertices; i++)
+    {
+        custoTotal += (*apGrafo)->mAdjacencia[caminho[i]][caminho[i+1]];
+    }
+    return custoTotal;
+}
+
+void copiarCaminho(TipoApontador *apGrafo, int *caminho, int * melhorCaminho){
+    for (int i = 0; i < (*apGrafo)->numeroVertices +1; i++)
+    {
+        melhorCaminho[i] = caminho[i];
+    }
+}

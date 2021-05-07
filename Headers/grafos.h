@@ -28,4 +28,6 @@ void insercaoAleatoria(TipoApontador *apGrafo, int *caminho);
 int escolhaAleatoria(TipoApontador *apGrafo, int *visitados);
 
 //heuristica de melhoria
-void algoritmo2opt(TipoApontador *apGrafo, int *caminho);
+void algoritmo2opt(TipoApontador *apGrafo, int *caminho, int * melhorCaminho);
+int calculaCustoCaminho(TipoApontador *apGrafo, int *caminho);
+void copiarCaminho(TipoApontador *apGrafo, int *caminho, int * melhorCaminho);
