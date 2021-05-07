@@ -31,3 +31,7 @@ int escolhaAleatoria(TipoApontador *apGrafo, int *visitados);
 void algoritmo2opt(TipoApontador *apGrafo, int *caminho, int * melhorCaminho);
 int calculaCustoCaminho(TipoApontador *apGrafo, int *caminho);
 void copiarCaminho(TipoApontador *apGrafo, int *caminho, int * melhorCaminho);
+
+
+//Auxiliares
+void exibirCaminho(TipoApontador *apGrafo, int *caminho);
