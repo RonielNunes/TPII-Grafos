@@ -10,10 +10,10 @@ int main(int argc, char const *argv[])
     int caminho[grafo->numeroVertices+1];
     int melhorCaminho[grafo->numeroVertices+1];
     exibirEstrutura(&grafo);
-    //insercaoVizinhoMaisProximo(&grafo,caminho);
+    insercaoVizinhoMaisProximo(&grafo,caminho);
     printf("\n");
 
-    insercaoAleatoria(&grafo,caminho);
+    //insercaoAleatoria(&grafo,caminho);
     exibirCaminho(&grafo,caminho);
     printf("custo do caminho : %d \n",calculaCustoCaminho(&grafo,caminho));
 

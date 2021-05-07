@@ -173,7 +173,6 @@ void algoritmo2opt(TipoApontador *apGrafo, int *caminho, int * melhorCaminho){
     for (int i = 0; i < (*apGrafo)->numeroVertices - 1; i++)
     {
         copiarCaminho(&(*apGrafo),caminho,caminhoAux);
-
         for (int j = i + 1; j < (*apGrafo)->numeroVertices; j++)
         {
             //permuta os pontos
@@ -188,11 +187,8 @@ void algoritmo2opt(TipoApontador *apGrafo, int *caminho, int * melhorCaminho){
                 copiarCaminho(&(*apGrafo),caminhoAux,melhorCaminho);
             } 
         }
-   
     }
 }
-
-
 void exibirCaminho(TipoApontador *apGrafo, int *caminho){
     for (int i = 0; i < (*apGrafo)->numeroVertices + 1; i++)
     {
@@ -200,8 +196,6 @@ void exibirCaminho(TipoApontador *apGrafo, int *caminho){
     }
     printf("\n");
 }
-
-
 int calculaCustoCaminho(TipoApontador *apGrafo, int *caminho)
 {
     int custoTotal = 0;
