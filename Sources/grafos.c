@@ -146,6 +146,7 @@ void insercaoAleatoria(TipoApontador *apGrafo, int *caminho)
     }
     caminho[(*apGrafo)->numeroVertices] = caminho[0];
 }
+
 int escolhaAleatoria(TipoApontador *apGrafo, int *visitados)
 {   
     int vertice;
@@ -189,6 +190,7 @@ void algoritmo2opt(TipoApontador *apGrafo, int *caminho, int * melhorCaminho){
         }
     }
 }
+
 void exibirCaminho(TipoApontador *apGrafo, int *caminho){
     for (int i = 0; i < (*apGrafo)->numeroVertices + 1; i++)
     {
@@ -196,6 +198,7 @@ void exibirCaminho(TipoApontador *apGrafo, int *caminho){
     }
     printf("\n");
 }
+
 int calculaCustoCaminho(TipoApontador *apGrafo, int *caminho)
 {
     int custoTotal = 0;

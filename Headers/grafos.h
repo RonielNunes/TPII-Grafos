@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <String.h>
+#include <math.h>
 
 #define FALSE 0
 #define TRUE 1
