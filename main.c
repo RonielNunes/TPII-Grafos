@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
             copiarCaminho(&grafo,melhorCaminho,melhor);
         }
     }
-    exibirCaminho(&grafo,melhor);
+    //exibirCaminho(&grafo,melhor);
     escreveArquivo(&grafo,melhor);
 
     ctci = 0;
