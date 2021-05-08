@@ -216,3 +216,24 @@ void copiarCaminho(TipoApontador *apGrafo, int *caminho, int * melhorCaminho){
         melhorCaminho[i] = caminho[i];
     }
 }
+
+
+void escreveArquivo(TipoApontador *apGrafo, int *caminho)
+{
+    FILE *arquivo = NULL;
+
+    arquivo = fopen("arquivo_saida.txt","w");
+
+    if(arquivo == NULL){
+        printf("Erro na criacao do arquivo.\n");
+        return;
+    }
+
+    fprintf(arquivo,"%d\n",(*apGrafo)->numeroVertices);
+
+    for (int i = 0; i < (*apGrafo)->numeroVertices; i++)
+    {
+        fprintf(arquivo,"%d %d\n", caminho[i]+1,caminho[i+1]+1);
+    }
+    
+}

@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <malloc.h>
@@ -8,6 +7,7 @@
 #define FALSE 0
 #define TRUE 1
 #define MAIOR 9999999;
+
 typedef int ** Estrutura;
 
 typedef struct{
@@ -19,6 +19,9 @@ typedef TipoGrafo * TipoApontador;
 
 //AUXILIARES
 void leituraArquivo(TipoApontador *apGrafo);
+void exibirCaminho(TipoApontador *apGrafo, int *caminho);
+void escreveArquivo(TipoApontador *apGrafo, int *caminho);
+
 //GRAFOS
 void inicializaGrafo(TipoApontador *apGrafo,int numeroVertices);
 void exibirEstrutura(TipoApontador *apGrafo);
@@ -32,7 +35,4 @@ int escolhaAleatoria(TipoApontador *apGrafo, int *visitados);
 void algoritmo2opt(TipoApontador *apGrafo, int *caminho, int * melhorCaminho);
 int calculaCustoCaminho(TipoApontador *apGrafo, int *caminho);
 void copiarCaminho(TipoApontador *apGrafo, int *caminho, int * melhorCaminho);
-
-
-//Auxiliares
-void exibirCaminho(TipoApontador *apGrafo, int *caminho);
+ 
